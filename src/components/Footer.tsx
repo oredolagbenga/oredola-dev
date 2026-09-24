@@ -1,10 +1,18 @@
 "use client";
 import { useTheme, THEMES } from "@/components/ThemeProvider";
+import Link from "next/link";
 
 export default function Footer() {
   const { theme } = useTheme();
   const t = THEMES[theme];
   const isLight = theme === "light";
+
+  const products = [
+    { name: "AcademiaBase", slug: "academiabase" },
+    { name: "LearnVault", slug: "learnvault" },
+    { name: "RankEngine", slug: "rankengine" },
+    { name: "StudentPay", slug: "studentpay" },
+  ];
 
   return (
     <footer className="relative mt-10 overflow-hidden" style={{ background: t.bg }}>
@@ -42,12 +50,19 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Products */}
+          {/* Products - FIXED DIRECT LINKS */}
           <div>
             <div className="text- font-mono tracking-[0.2em] mb-5" style={{ color: t.muted }}>PRODUCTS</div>
             <div className="space-y-3">
-              {["AcademiaBase", "LearnVault", "RankEngine", "StudentPay"].map(n => (
-                <a key={n} href="#products" className="block text- font-medium hover:translate-x-1 transition-transform" style={{ color: t.fg }}>{n}</a>
+              {products.map((p) => (
+                <Link
+                  key={p.name}
+                  href={`/products/${p.slug}`}
+                  className="block text- font-medium hover:translate-x-1 transition-transform"
+                  style={{ color: p.slug === 'rankengine'? t.fg : t.fg, fontWeight: p.slug === 'rankengine'? 700 : 500 }}
+                >
+                  {p.name} {p.slug === 'rankengine' && <span className="text- ml-2 px-1.5 py-0.5 rounded" style={{ background: t.fg, color: t.bg }}>SEO</span>}
+                </Link>
               ))}
               <div className="pt-3 text- font-mono px-3 py-1 rounded-full inline-flex border" style={{ borderColor: t.border, background: t.card, color: t.muted }}>8 SHIPPED • 2.3K USERS</div>
             </div>
@@ -65,27 +80,22 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Contact */}
           {/* Contact - WhatsApp, GitHub, LinkedIn same style */}
-<div className="rounded- border p-5" style={{ background: t.card, borderColor: t.border }}>
-  <div className="text- font-mono tracking-[0.2em] mb-4" style={{ color: t.muted }}>CONNECT</div>
-
-  <div className="flex flex-col gap-2.5">
-    <a href="mailto:hello@oredola.dev" className="block text- font-semibold mb-1" style={{ color: t.fg }}>hello@oredola.dev</a>
-
-    <a href="https://wa.me/2349034555644" target="_blank" className="inline-flex items-center gap-2.5 text- font-medium px-4 py-2.5 rounded-full border hover:opacity-80 hover:scale-[1.02] transition-all" style={{ borderColor: t.border, background: t.bg, color: t.fg }}>
-      <span className="h-6 w-6 rounded-full bg-[#25D366] flex items-center justify-center text- text-white font-bold">W</span> WhatsApp — Fast reply
-    </a>
-
-    <a href="https://github.com/oredola" target="_blank" className="inline-flex items-center gap-2.5 text- font-medium px-4 py-2.5 rounded-full border hover:opacity-80 hover:scale-[1.02] transition-all" style={{ borderColor: t.border, background: t.bg, color: t.fg }}>
-      <span className="h-6 w-6 rounded-full flex items-center justify-center text- font-bold" style={{ background: t.fg, color: t.bg }}>G</span> GitHub — Code & builds
-    </a>
-
-    <a href="https://linkedin.com/in/oredola" target="_blank" className="inline-flex items-center gap-2.5 text- font-medium px-4 py-2.5 rounded-full border hover:opacity-80 hover:scale-[1.02] transition-all" style={{ borderColor: t.border, background: t.bg, color: t.fg }}>
-      <span className="h-6 w-6 rounded-full bg-[#0A66C2] flex items-center justify-center text- text-white font-bold">in</span> LinkedIn — Work history
-    </a>
-  </div>
-</div>
+          <div className="rounded- border p-5" style={{ background: t.card, borderColor: t.border }}>
+            <div className="text- font-mono tracking-[0.2em] mb-4" style={{ color: t.muted }}>CONNECT</div>
+            <div className="flex flex-col gap-2.5">
+              <a href="mailto:hello@oredola.dev" className="block text- font-semibold mb-1" style={{ color: t.fg }}>hello@oredola.dev</a>
+              <a href="https://wa.me/2349034555644" target="_blank" className="inline-flex items-center gap-2.5 text- font-medium px-4 py-2.5 rounded-full border hover:opacity-80 hover:scale-[1.02] transition-all" style={{ borderColor: t.border, background: t.bg, color: t.fg }}>
+                <span className="h-6 w-6 rounded-full bg-[#25D366] flex items-center justify-center text- text-white font-bold">W</span> WhatsApp — Fast reply
+              </a>
+              <a href="https://github.com/oredolagbenga" target="_blank" className="inline-flex items-center gap-2.5 text- font-medium px-4 py-2.5 rounded-full border hover:opacity-80 hover:scale-[1.02] transition-all" style={{ borderColor: t.border, background: t.bg, color: t.fg }}>
+                <span className="h-6 w-6 rounded-full flex items-center justify-center text- font-bold" style={{ background: t.fg, color: t.bg }}>G</span> GitHub — Code & builds
+              </a>
+              <a href="https://linkedin.com/in/oredola" target="_blank" className="inline-flex items-center gap-2.5 text- font-medium px-4 py-2.5 rounded-full border hover:opacity-80 hover:scale-[1.02] transition-all" style={{ borderColor: t.border, background: t.bg, color: t.fg }}>
+                <span className="h-6 w-6 rounded-full bg-[#0A66C2] flex items-center justify-center text- text-white font-bold">in</span> LinkedIn — Work history
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Bottom - only place with copyright */}
