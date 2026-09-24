@@ -1,0 +1,10 @@
+@import "tailwindcss";
+* { font-feature-settings: "ss01" on, "cv01" on; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
