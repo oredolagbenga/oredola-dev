@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { useTheme, THEMES } from "@/components/ThemeProvider";
 
 const products = [
+  { letter: "O", name: "Oro Lexicon", desc: "Community-driven Yorùbá archive — Egba, Ijebu & Standard with tones, IPA & native audio. Preserving Yoruba language.", tag: "FLAGSHIP • Live", users: "lexicon.oredola.dev", status: "live", href: "https://lexicon.oredola.dev", color: "#ff7a18" },
   { letter: "A", name: "AcademiaBase", desc: "AI-powered research hub for African students.", tag: "AI + EDU", users: "2.3k", status: "live", href: "#", color: "#22d3ee" },
   { letter: "L", name: "LearnVault", desc: "Your second brain for learning. Notes, flashcards, AI quizzes.", tag: "Learning OS", users: "1.8k", status: "live", href: "#", color: "#a78bfa" },
-  { letter: "R", name: "RankEngine", desc: "SEO toolkit that ranks.ng domains.", tag: "SEO SaaS", users: "890", status: "live", href: "#", color: "#fb923c" },
+  { letter: "R", name: "RankEngine", desc: "SEO toolkit that ranks .ng domains.", tag: "SEO SaaS", users: "890", status: "live", href: "/products/rankengine", color: "#fb923c" },
   { letter: "E", name: "ExamAI", desc: "JAMB/WAEC past questions with AI tutor.", tag: "AI Tutor", users: "3.1k", status: "beta", href: "#", color: "#34d399" },
-  { letter: "N", name: "NaijaSEO Kit", desc: "Rank on Google Nigeria in 30 days.", tag: "SEO", users: "560", status: "live", href: "#", color: "#facc15" },
   { letter: "S", name: "StudentPay", desc: "Accept crypto & Naira for students.", tag: "Fintech", users: "1.2k", status: "building", href: "#", color: "#f472b6" },
   { letter: "S", name: "ShipFast NG", desc: "Next.js + Paystack boilerplate for Naija.", tag: "Boilerplate", users: "420", status: "live", href: "#", color: "#60a5fa" },
   { letter: "T", name: "TutorOS", desc: "Run your tutoring business.", tag: "SaaS", users: "310", status: "beta", href: "#", color: "#a78bfa" },
