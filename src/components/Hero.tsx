@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motio
 import { useEffect, useState } from "react";
 import { useTheme, THEMES, Theme } from "@/components/ThemeProvider";
 
-const words = ["AI Tools", "SaaS Products", "SEO Systems", "EdTech"];
+const words = ["Yoruba Archive", "AI Tools", "SaaS Products", "SEO Systems", "EdTech"];
 
 type Product = {
   name: string;
@@ -14,11 +14,11 @@ type Product = {
 };
 
 const products: Product[] = [
+  { name: "Oro Lexicon", stat: "Flagship", status: "live", dot: "green", desc: "Yoruba dictionary — live" },
   { name: "AcademiaBase", stat: "2.3k", status: "live", dot: "green", desc: "AI research hub" },
   { name: "LearnVault", stat: "1.8k", status: "live", dot: "green", desc: "Study vault" },
   { name: "RankEngine", stat: "890", status: "live", dot: "green", desc: "SEO engine" },
   { name: "ExamAI", stat: "3.1k", status: "beta", dot: "yellow", desc: "AI exam prep" },
-  { name: "NaijaSEO Kit", stat: "560", status: "live", dot: "green", desc: "Local SEO kit" },
   { name: "StudentPay", stat: "1.2k", status: "building", dot: "gray", desc: "Student payments" },
 ];
 
