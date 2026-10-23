@@ -10,20 +10,68 @@ export default function Page(){
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Oredola Gbenga",
+    "name": "Oredola Gbenga Augustine",
     "url": "https://oredola.dev",
-    "jobTitle": "Senior Web Dev x AI Engineer",
-    "description": "Senior Web Dev x AI Engineer - 8 products shipped, 1000+ users, $420/mo MRR. Builder of AcademiaBase, RankEngine, LearnVault.",
+    "jobTitle": "Founder @ oredola.dev | Builder of Oro Lexicon",
+    "description": "Senior Web Dev x AI Engineer - Founder of oredola.dev. Builder of Oro Lexicon (Yoruba language archive), AcademiaBase, RankEngine, LearnVault. 9 products shipped.",
     "sameAs": [
       "https://linkedin.com/in/oredola",
-      "https://github.com/oredola"
+      "https://github.com/oredola",
+      "https://lexicon.oredola.dev"
     ]
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://oredola.dev/#organization",
+    "name": "oredola.dev",
+    "url": "https://oredola.dev",
+    "founder": {
+      "@type": "Person",
+      "name": "Oredola Gbenga Augustine"
+    },
+    "owns": {
+      "@type": "SoftwareApplication",
+      "name": "Oro Lexicon",
+      "url": "https://lexicon.oredola.dev"
+    }
+  };
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Oro Lexicon",
+    "url": "https://lexicon.oredola.dev",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "author": {
+      "@type": "Person",
+      "name": "Oredola Gbenga Augustine",
+      "url": "https://oredola.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "oredola.dev",
+      "url": "https://oredola.dev"
+    },
+    "description": "Oro Lexicon by Oredola Gbenga Augustine — Community-driven Yorùbá archive preserving Egba, Ijebu & Standard Yoruba with accurate tones, IPA & native audio pronunciation. Live at lexicon.oredola.dev under oredola.dev.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "NGN"
+    }
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Oro Lexicon?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oro Lexicon is a Yoruba language archive built by Oredola Gbenga Augustine at lexicon.oredola.dev. It documents Egba, Ijebu and Standard Yoruba with tones, IPA and native audio. Flagship product of oredola.dev." }
+      },
       {
         "@type": "Question",
         "name": "What does RankEngine audit?",
@@ -54,6 +102,8 @@ export default function Page(){
       </div>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </div>
   )
