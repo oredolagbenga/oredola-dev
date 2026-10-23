@@ -21,7 +21,7 @@ export default function Page(){
     ]
   };
 
-  const organizationSchema = {
+    const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": "https://oredola.dev/#organization",
@@ -29,13 +29,12 @@ export default function Page(){
     "url": "https://oredola.dev",
     "founder": {
       "@type": "Person",
-      "name": "Oredola Gbenga Augustine"
+      "name": "Oredola Gbenga Augustine",
+      "url": "https://oredola.dev"
     },
-    "owns": {
-      "@type": "SoftwareApplication",
-      "name": "Oro Lexicon",
-      "url": "https://lexicon.oredola.dev"
-    }
+    "sameAs": [
+      "https://lexicon.oredola.dev"
+    ]
   };
 
   const productSchema = {
